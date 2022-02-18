@@ -1,0 +1,21 @@
+Manipular Pods con manifest:
+
+kubectl apply -f ejemplo.yaml
+kubectl get all
+kubectl delete -f ejemplo.yaml
+
+
+Muesta los labels:
+kubectl get pods --show-labels
+
+Get nodes / pods con mas detelles
+kubectl get pods -o wide
+
+Muestra todo lo que esta corriendo
+kubectl get all
+
+
+muestra las replicas de los pods
+kubectl get replicationcontroller
+
+kubectl delete deployment nginx
