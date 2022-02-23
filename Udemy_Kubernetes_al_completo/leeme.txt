@@ -1,4 +1,29 @@
+Dockers:
+--------
+Comandos basicos contenedores:
+-----------------------------
+
+1-Listar Contenedores:
+docker ps
+
+2-Crear un Contenedor y lanzarlo
+docker run -d -p 80:80 --name nginx mmorana/nginx:v1        
+
+3-Detener Contenedor:
+docker stop nginx
+
+4-Hacer el build de un Dockerfile:
+docker build -t mmorana/nginx:v1 .
+
+5-Push de imagen a docker hub:
+docker login
+docker push mmorana/nginx:v1
+
+K8S:
+----
+
 Manejo de Pods con comandos:
+----------------------------
 1-Crear pod:
 kubectl run nginx1 --image=nginx
 
@@ -16,4 +41,12 @@ kubectl exec nginx1 -it bash
 
 6-Consulto logs del pod:
 kubectl logs apache
-kubectl logs -f apache (persistente)
+kubectl logs -f apache (persistente tipo tail -f)
+
+7-Elimino pods:
+kubectl delete pod nginx1
+
+----------------------------------------------------
+
+Publicar la API de K8s para consultas:
+kubectl proxy
