@@ -1,0 +1,11 @@
+pods:
+1-Crear pod:
+kubectl run nginx1 --image=nginx
+
+2-Consultar pod:
+kubectl get pods -o wide
+
+3-Describe pod:
+kubectl describe pod/nginx1
+
+
