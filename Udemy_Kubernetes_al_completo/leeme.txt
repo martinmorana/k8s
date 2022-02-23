@@ -1,4 +1,4 @@
-pods:
+Manejo de Pods con comandos:
 1-Crear pod:
 kubectl run nginx1 --image=nginx
 
@@ -8,4 +8,12 @@ kubectl get pods -o wide
 3-Describe pod:
 kubectl describe pod/nginx1
 
+4- ejecuto comandos:
+kubectl exec nginx1 ls
 
+5- Bash interactivo 
+kubectl exec nginx1 -it bash
+
+6-Consulto logs del pod:
+kubectl logs apache
+kubectl logs -f apache (persistente)
