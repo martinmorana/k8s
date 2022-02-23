@@ -22,7 +22,7 @@ docker push mmorana/nginx:v1
 K8S:
 ----
 
-Manejo de Pods con comandos:
+Manejo de Pods con comandos (Imperativo sin manifest):
 ----------------------------
 1-Crear pod:
 kubectl run nginx1 --image=nginx
@@ -46,7 +46,15 @@ kubectl logs -f apache (persistente tipo tail -f)
 7-Elimino pods:
 kubectl delete pod nginx1
 
-----------------------------------------------------
+Manejo de Pods de manera declarativa:
+-------------------------------------
+
+1-Crear un pod:
+kubectl create -f nginx.yaml
+
+
+
+
 
 Publicar la API de K8s para consultas:
 kubectl proxy
