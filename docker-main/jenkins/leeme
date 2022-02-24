@@ -1,0 +1,12 @@
+Se realiza el Build de esta manera:
+Crear contenedor:
+docker-compose up -d
+
+Crear tag y subir imagen:
+docker image cp jenkins-ansible mmorananubiral/jenkins-ansible
+docker push mmorananubiral/jenkins-ansible
+
+
+
+Instalar Terra:
+https://learn.hashicorp.com/tutorials/terraform/install-cli

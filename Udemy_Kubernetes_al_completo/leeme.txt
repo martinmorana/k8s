@@ -29,6 +29,7 @@ kubectl run nginx1 --image=nginx
 
 2-Consultar pod:
 kubectl get pods -o wide
+kubectl get pod/nginx1 -o yaml # la salida del comando la armo con YAML
 
 3-Describe pod:
 kubectl describe pod/nginx1
@@ -51,7 +52,6 @@ Manejo de Pods de manera declarativa:
 
 1-Crear un pod:
 kubectl create -f nginx.yaml
-
 
 
 
