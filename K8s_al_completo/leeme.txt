@@ -19,6 +19,10 @@ docker build -t mmorana/nginx:v1 .
 docker login
 docker push mmorana/nginx:v1
 
+6-Nuestra las etiquetas del pod.
+kubectl get pod nginx1 --show-labels ---> Si agrego -L armo una columna con el label
+
+
 K8S:
 ----
 
@@ -55,6 +59,6 @@ kubectl apply -f nginx.yaml
 
 
 
-
+--------------------------------------
 Publicar la API de K8s para consultas:
 kubectl proxy

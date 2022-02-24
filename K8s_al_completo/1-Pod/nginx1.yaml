@@ -3,6 +3,7 @@ kind: Pod
 metadata:
   name: nginx1
   labels:
+    entorno: dev
     zone: prod
     version: v1
 spec:
