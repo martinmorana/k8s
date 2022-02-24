@@ -51,7 +51,7 @@ Manejo de Pods de manera declarativa:
 -------------------------------------
 
 1-Crear un pod:
-kubectl create -f nginx.yaml
+kubectl apply -f nginx.yaml
 
 
 
