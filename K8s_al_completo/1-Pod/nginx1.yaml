@@ -6,6 +6,8 @@ metadata:
     entorno: dev
     zone: prod
     version: v1
+  annotations:
+    doc: "Esta es una anotacion"
 spec:
   containers:
    - name: nginx   

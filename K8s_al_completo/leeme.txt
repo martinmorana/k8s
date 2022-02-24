@@ -50,6 +50,12 @@ kubectl logs -f apache (persistente tipo tail -f)
 
 7-Elimino pods:
 kubectl delete pod nginx1
+kubectl delete pod -l entorno=dev
+
+8-Consultar labels
+get pods --show-labels -l entorno=dev
+get pods --show-labels -l "entorno in(dev,test)" 
+
 
 Manejo de Pods de manera declarativa:
 -------------------------------------
