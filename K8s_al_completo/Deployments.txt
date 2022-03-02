@@ -1,0 +1,16 @@
+comandos:
+
+
+Modo imperativo:
+kubectl create deployment apache --image=httpd
+
+Muesta los replica set
+kubectl get rs
+
+Escalado:
+kubectl scale deploy nginx-d --replicas=4
+
+Modo Declarativo:
+
+kubectl describe apply apache
+

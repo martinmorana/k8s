@@ -63,8 +63,6 @@ Manejo de Pods de manera declarativa:
 1-Crear un pod:
 kubectl apply -f nginx.yaml
 
-
-
 --------------------------------------
 Publicar la API de K8s para consultas:
 kubectl proxy
