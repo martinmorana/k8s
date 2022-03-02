@@ -1,0 +1,11 @@
+muesto los servicios:
+kubectl get svs  
+
+Creo un servicio:
+kubectl expose deployment web-d --name=web-srv --target-port=80 --type=NodePort
+
+describe de servicio:
+kubectl describe svc web-srv 
+
+Eliminar un servicio:
+ubectl delete svc web-srv
