@@ -13,6 +13,6 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: mysql
   hostPath:
-    path: /Users/martinmorona/github_martinmorana/k8s/K8s_al_completo/Ejemplo/datos
+    path: /Users/martinmorona/github_martinmorana//datos
   
 

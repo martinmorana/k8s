@@ -13,5 +13,5 @@ spec:
   persistentVolumeReclaimPolicy: Recycle
   storageClassName: wordpress
   hostPath:
-    path: /Users/martinmorona/github_martinmorana/k8s/K8s_al_completo/Ejemplo/datos/wordpress
+    path: /Users/martinmorona/github_martinmorana/datos/wordpress
     

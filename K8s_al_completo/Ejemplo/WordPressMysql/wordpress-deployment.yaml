@@ -30,6 +30,7 @@ spec:
     matchLabels:
       app: wordpress
       tier: frontend
+  replicas: 2 # indica al controlador que ejecute 2 pods
   strategy:
     type: Recreate
   template:
