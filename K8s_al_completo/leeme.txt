@@ -3,6 +3,10 @@ Dockers:
 Comandos basicos contenedores:
 -----------------------------
 
+
+0-lista todos los elementos:
+kubectl get all
+
 1-Listar Contenedores:
 docker ps
 
