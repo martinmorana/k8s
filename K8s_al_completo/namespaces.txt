@@ -1,0 +1,23 @@
+Creo un namespace
+kubectl create namespace dev1
+
+Elimino un namespace
+kubectl delete namespace dev1
+
+Describe:
+kubectl describe namespace dev1
+
+Muestro y creo recursos en el namespace dev1:
+
+kubectl get pods -n dev1 
+kubectl get deploy -n dev1
+kubectl apply -f deploy_elasitc.yaml -n dev1 
+
+PODEMOS CONFIGURAR LIMITES DE RECRUSOS EN LOS NAMESPACE
+
+No resource quota.
+
+Resource Limits
+ Type       Resource  Min    Max  Default Request  Default Limit  Max Limit/Request Ratio
+ ----       --------  ---    ---  ---------------  -------------  -----------------------
+ Container  memory    128Mi  1Gi  256Mi            512Mi          -
