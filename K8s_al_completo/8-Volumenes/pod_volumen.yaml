@@ -17,7 +17,7 @@ spec:
   volumes:
   - name: home
     hostPath:
-      path: /home/kubernetes/datos
+      path: /Users/martinmorona/Downloads
   - name: git
     gitRepo:
       repository: https://github.com/apasoftTraining/cursoKubernetes.git

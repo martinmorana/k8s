@@ -1,0 +1,18 @@
+#####################
+## PV para MySQL  ###
+#####################
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: pv-mysql
+spec:
+  capacity:
+    storage: 25Gi
+  accessModes:
+    - ReadWriteMany
+  persistentVolumeReclaimPolicy: Recycle
+  storageClassName: mysql
+  hostPath:
+    path: /Users/martinmorona/github_martinmorana/k8s/K8s_al_completo/Ejemplo/datos
+  
+
