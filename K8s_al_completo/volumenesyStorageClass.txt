@@ -1,7 +1,13 @@
 Se pueden asignar volumenes directamente a los pods pero lo idea es crear un Persistent Volume, luego creas un 
 persistent volume claim donde reclamas una porcion o todo el espacio del Persistent volumen tipo Group Disk and Raid
 
-
-
-
+Para listar los Pysical Volume:
 kubectl get pv
+
+Lista Pysical Volume claim
+kubectl get pvc
+
+listar storage class:
+kubectl get sc
+
+
