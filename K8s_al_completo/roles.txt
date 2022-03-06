@@ -1,0 +1,7 @@
+Los roles son por namespaces o cluster.
+
+Para verlos:
+
+kubecrl get clusterroles
+
+kubectl get roles -n kube-system
