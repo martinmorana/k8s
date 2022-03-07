@@ -1,0 +1,49 @@
+Repos:
+------
+
+helm repo list
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+helm repo list
+
+helm repo remove bitnami
+
+helm repo add bitnami https://charts.bitnami.com/bitnami
+
+
+Search the repository:
+
+helm search repo mysql
+
+helm search repo database
+
+helm search repo database --versions
+
+
+Create Deplos, etc :
+---------
+
+helm install mydb bitnami/mysql
+
+helm status mydb
+
+
+helm install mydb bitnami/mysql --values=values.yaml
+
+helm upgrade mydb bitnami/mysql --values=values.yaml
+
+
+helm get notes mydb
+
+helm get values mydb  
+
+helm get values mydb --revision 2
+
+helm get manifest mydb
+
+
+helm history mydb 
+
+
+helm rollback mydb 2
