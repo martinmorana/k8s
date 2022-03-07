@@ -1,0 +1,12 @@
+Son Variables que se le pasan al PODs
+Van como variables de entorno en el PODs
+
+kubectl create configmap cm1 --from-literal=usuario1=1 --from-literal=usuario2=2
+
+Crear desde un archivo config
+
+kubectl create configmap nombre --from-file=file.properties
+
+Listo:
+
+ kubectl get cm

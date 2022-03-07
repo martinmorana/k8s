@@ -1,0 +1,17 @@
+Son las encargadas de hacer un ckeck del estado de los pods:
+
+Se puede configurar 
+    comandos de OS
+    HTTP GET
+    Sockect 
+
+hay 3 tipos:
+
+Liveness
+Verifica el Pods si la prod no responde mata el pod
+
+Readness
+Verifica si el pod esta listo pero no esta dando servicio (Ej timeout db). Deja inaccesible el pods pero no lo mata
+
+Startup
+solo se utiliza en el inicio
