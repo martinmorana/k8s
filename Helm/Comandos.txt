@@ -32,19 +32,28 @@ helm status mydb                                        ## Verifico instalacion,
 
 helm upgrade mydb bitnami/mysql --values=values.yaml    ## realizo un cambio en la instacion. ej cambio algun valor en el yaml
 
--------------------------------------------------------------------------------------------------------------------------------
+
+Examples Get options:
+---------------------
+
+helm get notes mydb                                     ## Lista todas los datos menos los del deploy simil status pero un poco mas recuducido
+
+helm get values mydb                                    ## lista los valores configurados en el install
+
+helm get values mydb --revision 2                       ## Lista los cambios de valores en los diferentes upgrades
+
+helm get manifest mydb                                  ## Muesta los manifest que tiene el install
+
+History y Rollback:
+------------------
+
+helm history mydb                                       ## Muestra el historial de cambios los updates que tuvo
+
+helm rollback mydb 2                                    ## realizo un rollback a un history espefico, en el ej es el 2
+
+Create Charts:
+--------------
+
+helm create primerchart                                 ## Create de New Chart
 
 
-helm get notes mydb                                 
-
-helm get values mydb  
-
-helm get values mydb --revision 2
-
-helm get manifest mydb
-
-
-helm history mydb 
-
-
-helm rollback mydb 2
