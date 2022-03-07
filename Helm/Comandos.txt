@@ -21,20 +21,21 @@ helm search repo database
 helm search repo database --versions
 
 
-Create Deplos, etc :
+INSTALLs :
 ---------
 
 helm install mydb bitnami/mysql
 
-helm status mydb
+helm install mydb bitnami/mysql --values=values.yaml    ## Pasandole Valores
+
+helm status mydb                                        ## Verifico instalacion, tipo decribe
+
+helm upgrade mydb bitnami/mysql --values=values.yaml    ## realizo un cambio en la instacion. ej cambio algun valor en el yaml
+
+-------------------------------------------------------------------------------------------------------------------------------
 
 
-helm install mydb bitnami/mysql --values=values.yaml
-
-helm upgrade mydb bitnami/mysql --values=values.yaml
-
-
-helm get notes mydb
+helm get notes mydb                                 
 
 helm get values mydb  
 
