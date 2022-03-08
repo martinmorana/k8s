@@ -1,0 +1,9 @@
+Principales Características:
+
+  Control Cluster K8S:
+	Puede correr en el mismo o external.
+	Soporta cualquier tipo de manifest
+	Cuando crear una Argo CD APP, definis un REPO GIT y un namespace y el lo instala
+	Monitora el repo GIT, si encuentra algún cambio lo actualiza en el cluster para dejarlos sync.
+	
+	
