@@ -6,4 +6,18 @@ Principales Características:
 	Cuando crear una Argo CD APP, definis un REPO GIT y un namespace y el lo instala
 	Monitora el repo GIT, si encuentra algún cambio lo actualiza en el cluster para dejarlos sync.
 	
+
+Argo CD is just one member of the Argo family of projects. These are:
+
+Argo CD (GitOps controller)
+Argo Rollouts (Progressive Delivery controller)
+Argo Workflows (Workflow engine for Kubernetes)
+Argo Events (Event handling for Kubernetes)
+
+Exposing your Argo CD to users will be a different process depending on your organization, but in most cases, you should make the Argo CD UI available to external traffic via a Kubernetes ingress.
+
+Once the external URL is ready, you need to decide how users will access the Argo CD UI. There are mainly two approaches:
+
+Use a small number of local users. Authentication is handled by Argo CD itself. Best for very small companies (e.g. 2-5 people).
+Use an SSO provider. Authentication is handled by the provider. Ideal for companies and large organizations
 	
