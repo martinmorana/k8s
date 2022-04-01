@@ -1,3 +1,4 @@
+# https://registry.terraform.io/providers/cyrilgdn/postgresql/latest/docs/resources/postgresql_database
 terraform {
   required_providers {
     postgresql = {
