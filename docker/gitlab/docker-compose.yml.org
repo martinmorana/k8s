@@ -1,7 +1,7 @@
 version: '3.6'
 services:
   web:
-    image: 'ulm0/gitlab'
+    image: 'gitlab/gitlab-ee:latest'
     restart: always
     hostname: 'gitlab.example.com'
     environment:
