@@ -1,23 +1,34 @@
-# variable "append_secret" {
-#   type        = bool
-#   default     = true
-#   description = "Allow to append the new secrets to existing one"
-# }
 variable "secret_path" {
   type        = string
   description = "Vault path for secret storage"
 }
 
-# variable "secrets" {
-#   type        = map(string)
-#   description = "Define Key Vault secrets"
-# }
+variable "db_host" {
+  type        = string
+  description = "Host name RDS"
+}
+
+variable "db_port" {
+  type        = number
+  description = "RDS Port"
+}
+
+variable "db_sslmode" {
+  type        = string
+  description = "SSL Mode PostgreSQL"
+}
+
+variable "db_connect_timeout" {
+  type        = number
+  description = "RDS Port"
+}
 
 variable "databases_map" {
   type = map(object({
-    db_name  = string
-    username = string
-    password = string
+    db_name           = string
+    vault_secret_path = string
+    username          = string
+    password          = string
   }))
   description = "Maps databases for RDS Cluster"
 }

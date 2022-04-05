@@ -11,8 +11,9 @@ terraform {
 }
 
 provider "vault" {
-  address = "http://127.0.0.1:8200"
-  token   = "hvs.BhjLZGCbfQ6O7w2OzbvpBGbJ"
+  add_address_to_env = true
+  #address = "http://127.0.0.1:8200"
+  #token   = "hvs.BhjLZGCbfQ6O7w2OzbvpBGbJ"
 }
 
 

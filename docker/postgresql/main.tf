@@ -1,35 +1,31 @@
+# DS Hashicorp Vault
 data "vault_generic_secret" "prueba" {
   path = var.secret_path
 }
 
-output "username" {
-  sensitive = true
-  value     = data.vault_generic_secret.prueba.data.username
-}
-
-
+# Provider for connect to RDS Aurora
 provider "postgresql" {
-  host            = data.vault_generic_secret.prueba.data.host
-  port            = 5432
+  host            = var.db_host
+  port            = var.db_port
   database        = data.vault_generic_secret.prueba.data.database
   username        = data.vault_generic_secret.prueba.data.username
   password        = data.vault_generic_secret.prueba.data.password
-  sslmode         = "disable"
-  connect_timeout = 15
+  sslmode         = var.db_sslmode
+  connect_timeout = var.db_connect_timeout
 }
 
-
-resource "postgresql_role" "my_role" {
-
+# Create PostgueSQL Role
+resource "postgresql_role" "create_postgresql_role" {
   for_each = var.databases_map
   name     = each.value.username
   password = each.value.password
   login    = true
 }
 
+# Create Secret Vault
 resource "vault_generic_secret" "new_secrets" {
   for_each = var.databases_map
-  path     = "secret/${each.value.db_name}"
+  path     = each.value.vault_secret_path
 
   data_json = <<EOT
 {
@@ -39,8 +35,8 @@ resource "vault_generic_secret" "new_secrets" {
 EOT
 }
 
-resource "postgresql_database" "my_db" {
-
+# Create Databases
+resource "postgresql_database" "create_postgresql_db" {
   for_each          = var.databases_map
   name              = each.value.db_name
   owner             = each.value.username
@@ -49,6 +45,6 @@ resource "postgresql_database" "my_db" {
   allow_connections = true
 
   depends_on = [
-    postgresql_role.my_role,
+    postgresql_role.create_postgresql_role,
   ]
 }

@@ -5,9 +5,43 @@ docker run --name basic-postgres --rm -e POSTGRES_USER=postgres -e POSTGRES_PASS
 2- acceder al contenedor
 
 docker exec -it basic-postgres /bin/sh
+psql -h localhost -U postgres
+
 
 https://geshan.com.np/blog/2021/12/docker-postgres/
 
 
+
+
 3- Iniciar vault:
 vault server -dev
+ export VAULT_ADDR='http://127.0.0.1:8200'
+ export VAULT_TOKEN='hvs.ede12FrvnVaiAiHxUNnwkrlL'
+
+
+
+Revisar con Felipe.
+
+1- Token de Vault.
+2- 
+
+
+
+Generar carpetas con TFs
+
+ver readme etc...
+
+
+Mod. el provider igial repo
+
+
+
+Instalar terraform docs (Le aviso a Felipe antes de ejecutar)
+
+
+
+Nombre Terraform-AWS db generator
+
+
+
+Revisar Vault DEsa ver prepaid-car dev
