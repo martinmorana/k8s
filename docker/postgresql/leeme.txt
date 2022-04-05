@@ -28,20 +28,11 @@ Revisar con Felipe.
 
 
 Generar carpetas con TFs
-
 ver readme etc...
-
-
 Mod. el provider igial repo
-
-
 
 Instalar terraform docs (Le aviso a Felipe antes de ejecutar)
 
-
-
 Nombre Terraform-AWS db generator
-
-
-
+terraform-aws-db-generator
 Revisar Vault DEsa ver prepaid-car dev
