@@ -1,4 +1,3 @@
-secret_path = "secret/rds-lab"
 databases_map = {
   db1 = {
     db_name  = "db1"
@@ -18,6 +17,6 @@ databases_map = {
   db4 = {
     db_name  = "db4"
     username = "user_db4"
-    password = "passw4"
+    password = "passw"
   }
 }
