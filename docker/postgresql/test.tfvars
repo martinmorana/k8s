@@ -32,11 +32,11 @@ databases_map = {
     username          = "user_db4"
     password          = "passw4"
   }
-    db5 = {
+  db5 = {
     db_name           = "db5"
     vault_secret_path = "secret/database/db5"
     username          = "user_db5"
     password          = "passw5"
-  }  
+  }
 
 }
