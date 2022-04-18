@@ -10,20 +10,26 @@ db_connect_timeout = 15
 databases_map = {
   0 = {
     db_name           = "db10"
-    vault_secret_path = "secret/database/db10"
+    vault_secret_path = "secret/db/db10"
     username          = "user_db10"
 
   }
   1 = {
     db_name           = "db11"
-    vault_secret_path = "secret/database/db11"
+    vault_secret_path = "secret/db/db11"
     username          = "user_db11"
 
   }
   2 = {
     db_name           = "db12"
-    vault_secret_path = "secret/database/db12"
+    vault_secret_path = "secret/db/db12"
     username          = "user_db12"
+
+  }
+  3 = {
+    db_name           = "db13"
+    vault_secret_path = "secret/db/db13"
+    username          = "user_db13"
 
   }
 }

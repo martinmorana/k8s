@@ -30,25 +30,31 @@ resource "postgresql_role" "create_postgresql_role" {
   login    = true
 }
 
-# Create Secret Vault
-resource "vault_generic_secret" "new_secrets" {
+data "vault_generic_secret" "secret" {
   for_each = var.databases_map
   path     = each.value.vault_secret_path
+}
 
-  data_json = <<EOT
-{
-  "dbusername": "${each.value.username}",
-  "dbpassword": "${random_password.password[each.key].result}"
+# Create Secret Vault
+resource "vault_generic_secret" "new_secrets" {
+
+  for_each  = var.databases_map
+  path      = data.vault_generic_secret.secret[each.key].path
+  data_json = jsonencode(merge(data.vault_generic_secret.secret[each.key].data, { dbusername = "${each.value.username}", dbpassword = "${random_password.password[each.key].result}" }))
 }
-EOT
-}
+
+
+/* output "prueba" {
+  value = data.vault_generic_secret.secre[0].data
+} */
 
 # Create Databases
 resource "postgresql_database" "create_postgresql_db" {
   for_each          = var.databases_map
+  
   name              = each.value.db_name
   owner             = each.value.username
-  lc_collate        = "C"
+  lc_collate        = "en_US.UTF-8"
   connection_limit  = -1
   allow_connections = true
 
