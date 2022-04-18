@@ -14,11 +14,19 @@ provider "postgresql" {
   connect_timeout = var.db_connect_timeout
 }
 
+# Generate Random Password
+resource "random_password" "password" {
+  count            = length(var.databases_map)
+  length           = 16
+  special          = true
+  override_special = "!#$%&*()-_=+[]{}<>:?"
+}
+
 # Create PostgueSQL Role
 resource "postgresql_role" "create_postgresql_role" {
   for_each = var.databases_map
   name     = each.value.username
-  password = each.value.password
+  password = random_password.password[each.key].result
   login    = true
 }
 
@@ -29,8 +37,8 @@ resource "vault_generic_secret" "new_secrets" {
 
   data_json = <<EOT
 {
-  "username":   "${each.value.username}",
-  "password": "${each.value.password}"
+  "dbusername": "${each.value.username}",
+  "dbpassword": "${random_password.password[each.key].result}"
 }
 EOT
 }

@@ -28,7 +28,7 @@ variable "databases_map" {
     db_name           = string
     vault_secret_path = string
     username          = string
-    password          = string
+
   }))
   description = "Maps databases for RDS Cluster"
 }

@@ -8,35 +8,22 @@ db_connect_timeout = 15
 
 # Mapa con bases a crear.
 databases_map = {
-  db1 = {
-    db_name           = "db1"
-    vault_secret_path = "secret/database/db1"
-    username          = "user_db1"
-    password          = "pass_db1"
-  }
-  db2 = {
-    db_name           = "db2"
-    vault_secret_path = "secret/database/db2"
-    username          = "user_db2"
-    password          = "passw_db2"
-  }
-  db3 = {
-    db_name           = "db3"
-    vault_secret_path = "secret/database/db3"
-    username          = "user_db3"
-    password          = "passw_db3"
-  }
-  db4 = {
-    db_name           = "db4"
-    vault_secret_path = "secret/database/db4"
-    username          = "user_db4"
-    password          = "passw4"
-  }
-  db5 = {
-    db_name           = "db5"
-    vault_secret_path = "secret/database/db5"
-    username          = "user_db5"
-    password          = "passw5"
-  }
+  0 = {
+    db_name           = "db10"
+    vault_secret_path = "secret/database/db10"
+    username          = "user_db10"
 
+  }
+  1 = {
+    db_name           = "db11"
+    vault_secret_path = "secret/database/db11"
+    username          = "user_db11"
+
+  }
+  2 = {
+    db_name           = "db12"
+    vault_secret_path = "secret/database/db12"
+    username          = "user_db12"
+
+  }
 }
