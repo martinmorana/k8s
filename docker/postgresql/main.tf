@@ -43,15 +43,10 @@ resource "vault_generic_secret" "new_secrets" {
   data_json = jsonencode(merge(data.vault_generic_secret.secret[each.key].data, { dbusername = "${each.value.username}", dbpassword = "${random_password.password[each.key].result}" }))
 }
 
-
-/* output "prueba" {
-  value = data.vault_generic_secret.secre[0].data
-} */
-
 # Create Databases
 resource "postgresql_database" "create_postgresql_db" {
-  for_each          = var.databases_map
-  
+  for_each = var.databases_map
+
   name              = each.value.db_name
   owner             = each.value.username
   lc_collate        = "en_US.UTF-8"

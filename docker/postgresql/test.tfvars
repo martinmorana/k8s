@@ -20,7 +20,7 @@ databases_map = {
     username          = "user_db11"
 
   }
-  2 = {
+  /*  2 = {
     db_name           = "db12"
     vault_secret_path = "secret/db/db12"
     username          = "user_db12"
@@ -31,5 +31,5 @@ databases_map = {
     vault_secret_path = "secret/db/db13"
     username          = "user_db13"
 
-  }
+  } */
 }
