@@ -14,11 +14,12 @@ https://geshan.com.np/blog/2021/12/docker-postgres/
 
 
 3- Iniciar vault:
-vault server -dev
+vault server -dev  
  export VAULT_ADDR='http://127.0.0.1:8200'
  export VAULT_TOKEN='hvs.ede12FrvnVaiAiHxUNnwkrlL'
 
-
+Tambien podemos decretarle un Token
+vault server -dev -dev-root-token-id root
 
 Revisar con Felipe.
 

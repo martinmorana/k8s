@@ -38,10 +38,18 @@ data "vault_generic_secret" "secret" {
 # Create Secret Vault
 resource "vault_generic_secret" "new_secrets" {
 
-  for_each  = var.databases_map
-  path      = data.vault_generic_secret.secret[each.key].path
+  for_each     = var.databases_map
+  path         = data.vault_generic_secret.secret[each.key].path
   data_json = jsonencode(merge(data.vault_generic_secret.secret[each.key].data, { dbusername = "${each.value.username}", dbpassword = "${random_password.password[each.key].result}" }))
+  
+  lifecycle {
+    ignore_changes = [
+      data,
+      data_json
+    ]
+  }
 }
+
 
 # Create Databases
 resource "postgresql_database" "create_postgresql_db" {
